@@ -6,7 +6,7 @@ import {
 import Tarjeta, { TituloTarjeta } from './Tarjeta'
 import Galeria from './Galeria'
 import { IconoGithub, IconoInstagram, IconoLinkedin, IconoWhatsapp } from './Iconos'
-import { galeria, perfil } from '../data/contenido'
+import { perfil } from '../data/contenido'
 
 function Redes({ className = '' }) {
   const enlaces = [
@@ -262,17 +262,14 @@ export default function Bento({ t, idioma }) {
       {/* ---------- Mi día a día (solo aparece si hay fotos) ---------- */}
       <Galeria t={t} idioma={idioma} />
 
-      {/* ---------- Contacto (ocupa todo el ancho si no hay galería) ---------- */}
-      <Tarjeta
-        id="contacto"
-        className={`flex flex-col justify-between gap-5 md:col-span-2 ${galeria.length ? '' : 'lg:col-span-4 lg:flex-row lg:items-end lg:gap-10'}`}
-      >
+      {/* ---------- Contacto ---------- */}
+      <Tarjeta id="contacto" className="flex flex-col justify-between gap-5 md:col-span-2 lg:col-span-4 lg:flex-row lg:items-end lg:gap-10">
         <div className="min-w-0">
           <TituloTarjeta icono={Mail}>{t.nav.contacto}</TituloTarjeta>
           <p className="text-2xl font-extrabold tracking-tight text-tinta">{t.contacto.titulo}</p>
           <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-suave">{t.contacto.texto}</p>
         </div>
-        <div className={`flex flex-col gap-3 ${galeria.length ? '' : 'lg:w-[460px] lg:shrink-0'}`}>
+        <div className="flex flex-col gap-3 lg:w-[460px] lg:shrink-0">
           <div className="flex min-w-0 items-center gap-2 rounded-xl border border-borde bg-fondo p-1.5 pl-4">
             <a href={`mailto:${perfil.email}`} className="min-w-0 flex-1 truncate text-sm font-semibold text-tinta hover:text-marca">
               {perfil.email}

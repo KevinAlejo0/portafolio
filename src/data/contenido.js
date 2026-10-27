@@ -116,6 +116,7 @@ export const textos = {
       lista: [
         { etiqueta: 'Terminando', texto: 'mi tesis de predicción de oleaje con redes LSTM' },
         { etiqueta: 'Construyendo', texto: 'ZeroBaz junto a mis dos socios' },
+        { etiqueta: 'Apoyando', texto: 'como voluntario en el Voluntariado UNT' },
         { etiqueta: 'Buscando', texto: 'prácticas pre-profesionales en datos o BI' },
       ],
     },
@@ -252,6 +253,7 @@ export const textos = {
       lista: [
         { etiqueta: 'Finishing', texto: 'my thesis on wave forecasting with LSTM networks' },
         { etiqueta: 'Building', texto: 'ZeroBaz with my two partners' },
+        { etiqueta: 'Giving back', texto: 'as a volunteer with the UNT Volunteer Program' },
         { etiqueta: 'Looking for', texto: 'an internship in data or BI' },
       ],
     },
@@ -292,10 +294,20 @@ export const textos = {
   },
 }
 
-// Galería "Mi día a día": fotos de tu día a día o de tus ratos libres.
-// Pon las fotos en public/img/galeria/ y agrégalas aquí. Mientras la lista esté vacía, la tarjeta no se muestra.
-// Ejemplo: { foto: 'img/galeria/01.webp', es: 'Pie de foto', en: 'Photo caption' },
-export const galeria = []
+// Galería "Mi día a día": fotos de tu día a día o de tus ratos libres (están en public/img/galeria/).
+// forma: 'grande' (2×2) o 'alta' (1×2 en escritorio); sin forma ocupa una celda.
+// enfoque: qué parte de la foto se ve en el mosaico (posición horizontal y vertical).
+// Con 7 fotos el mosaico queda completo así: 1 grande, 2 altas y 4 normales, en este orden.
+// Si la lista queda vacía, la tarjeta no se muestra.
+export const galeria = [
+  { foto: 'img/galeria/01-voluntariado.webp', forma: 'grande', enfoque: '50% 62%', es: 'Voluntariado UNT', en: 'UNT volunteering' },
+  { foto: 'img/galeria/02-accion-social.webp', forma: 'alta', enfoque: '50% 55%', es: 'Acción social', en: 'Community work' },
+  { foto: 'img/galeria/03-ajedrez.webp', enfoque: '50% 60%', es: 'Jugando ajedrez', en: 'Playing chess' },
+  { foto: 'img/galeria/04-atardecer.webp', forma: 'alta', enfoque: '50% 60%', es: 'Atardeceres', en: 'Sunsets' },
+  { foto: 'img/galeria/05-dashboard.webp', enfoque: '30% 38%', es: 'Modo dashboard', en: 'Dashboard mode' },
+  { foto: 'img/galeria/06-campus.webp', enfoque: '50% 35%', es: 'Mi campus', en: 'My campus' },
+  { foto: 'img/galeria/07-desconectando.webp', enfoque: '50% 60%', es: 'Desconectando', en: 'Unplugging' },
+]
 
 // Proyectos: el orden de la lista es el orden en que aparecen.
 // categorias: datos | ml | dev | iot   ·   icono: ver ICONOS_PROYECTO en Proyectos.jsx

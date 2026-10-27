@@ -3,6 +3,12 @@ import { Camera, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import Tarjeta, { TituloTarjeta } from './Tarjeta'
 import { galeria } from '../data/contenido'
 
+// Celdas que ocupa cada foto según su "forma" (ver galeria en contenido.js)
+const FORMAS = {
+  grande: 'col-span-2 row-span-2',
+  alta: 'lg:row-span-2',
+}
+
 // Tarjeta "Mi día a día": mosaico de fotos que se amplían al hacer clic
 export default function Galeria({ t, idioma }) {
   const [abierta, setAbierta] = useState(null) // índice de la foto ampliada, o null
@@ -22,13 +28,13 @@ export default function Galeria({ t, idioma }) {
   const actual = abierta !== null ? galeria[abierta] : null
 
   return (
-    <Tarjeta className="md:col-span-2">
+    <Tarjeta className="md:col-span-2 lg:col-span-4">
       <TituloTarjeta icono={Camera}>{t.galeria.titulo}</TituloTarjeta>
       <p className="-mt-2 mb-4 text-sm text-suave">{t.galeria.subtitulo}</p>
 
-      <ul className="grid auto-rows-[92px] grid-cols-3 gap-2 sm:auto-rows-[118px]">
+      <ul className="grid auto-rows-[140px] grid-cols-2 gap-2 sm:auto-rows-[180px] lg:auto-rows-[190px] lg:grid-cols-4 lg:gap-3">
         {galeria.map((g, i) => (
-          <li key={g.foto} className={i === 0 && total >= 3 ? 'col-span-2 row-span-2' : ''}>
+          <li key={g.foto} className={FORMAS[g.forma] ?? ''}>
             <button
               type="button"
               onClick={() => setAbierta(i)}
@@ -39,9 +45,10 @@ export default function Galeria({ t, idioma }) {
                 src={g.foto}
                 alt={g[idioma]}
                 loading="lazy"
+                style={{ objectPosition: g.enfoque }}
                 className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <span className="absolute inset-x-0 bottom-0 translate-y-full bg-linear-to-t from-tinta/80 to-transparent p-2 pt-6 text-left text-xs font-medium text-white transition-transform duration-300 group-hover:translate-y-0">
+              <span className="absolute inset-x-0 bottom-0 bg-linear-to-t from-tinta/75 to-transparent p-3 pt-8 text-left text-xs font-semibold text-white">
                 {g[idioma]}
               </span>
             </button>
