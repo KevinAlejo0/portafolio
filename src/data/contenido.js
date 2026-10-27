@@ -53,7 +53,7 @@ export const textos = {
 
     zerobaz: {
       etiqueta: 'Mi emprendimiento',
-      cargo: 'Fundador',
+      cargo: 'Fundador · desde abril de 2026',
       descripcion: 'Fundé ZeroBaz para llevar soluciones digitales a la medida a negocios, emprendedores y estudiantes. Hoy somos un equipo de tres: sumé a dos amigos para atender más proyectos.',
       servicios: ['Sistemas para negocios', 'Páginas web', 'Dashboards y reportes', 'Soporte técnico', 'Asesoría en informes'],
       equipo: 'Equipo de 3',
@@ -75,16 +75,22 @@ export const textos = {
       verCv: 'Ver CV completo (PDF)',
       lista: [
         {
-          cargo: 'Analista de Datos',
+          cargo: 'Practicante de Análisis de Datos',
           lugar: 'Hospital Distrital de Pacasmayo · MINSA',
-          periodo: '2026 – actualidad',
+          periodo: 'Ago 2026 – actualidad',
           detalle: 'Área de Gestión de la Información: automatizo con Python, SQL Server y Power BI el cálculo de los indicadores de desempeño del hospital.',
         },
         {
           cargo: 'Fundador',
           lugar: 'ZeroBaz',
-          periodo: '2026 – actualidad',
+          periodo: 'Abr 2026 – actualidad',
           detalle: 'Desarrollo de sistemas, páginas web y dashboards para negocios locales, junto a un equipo de tres.',
+        },
+        {
+          cargo: 'Asistente de Análisis de Datos',
+          lugar: 'CARLX E.I.R.L.',
+          periodo: 'Ago 2025 – Set 2026',
+          detalle: 'Donde di mis primeros pasos en análisis de datos durante un año. También desarrollé el sitio web de la empresa.',
         },
         {
           cargo: 'Promotor de créditos y gestión de datos de clientes',
@@ -121,13 +127,13 @@ export const textos = {
       rol: 'Coautor · responsable de la capa de datos',
     },
 
-    dia: {
+    galeria: {
       titulo: 'Mi día a día',
-      bloques: [
-        { momento: 'Mañana', icono: 'sunrise', texto: 'Datos en el hospital: limpieza, ETL y revisión del dashboard.' },
-        { momento: 'Tarde', icono: 'sun', texto: 'Clases en la UNT y avances de la tesis.' },
-        { momento: 'Noche', icono: 'moon', texto: 'Proyectos de ZeroBaz con el equipo y algo nuevo por aprender.' },
-      ],
+      subtitulo: 'Lo que hago cuando no estoy frente a los datos.',
+      ampliar: 'Ampliar foto',
+      cerrar: 'Cerrar',
+      anterior: 'Foto anterior',
+      siguiente: 'Foto siguiente',
     },
 
     contacto: {
@@ -183,7 +189,7 @@ export const textos = {
 
     zerobaz: {
       etiqueta: 'My startup',
-      cargo: 'Founder',
+      cargo: 'Founder · since April 2026',
       descripcion: 'I founded ZeroBaz to bring tailor-made digital solutions to businesses, entrepreneurs and students. We are now a team of three: I brought in two friends to take on more projects.',
       servicios: ['Business systems', 'Websites', 'Dashboards & reports', 'Tech support', 'Report consulting'],
       equipo: 'Team of 3',
@@ -205,16 +211,22 @@ export const textos = {
       verCv: 'View full CV (PDF, Spanish)',
       lista: [
         {
-          cargo: 'Data Analyst',
+          cargo: 'Data Analyst Intern',
           lugar: 'Pacasmayo District Hospital · MINSA',
-          periodo: '2026 – present',
+          periodo: 'Aug 2026 – present',
           detalle: 'Information Management area: I automate the hospital’s performance indicators with Python, SQL Server and Power BI.',
         },
         {
           cargo: 'Founder',
           lugar: 'ZeroBaz',
-          periodo: '2026 – present',
+          periodo: 'Apr 2026 – present',
           detalle: 'Building systems, websites and dashboards for local businesses with a team of three.',
+        },
+        {
+          cargo: 'Data Analysis Assistant',
+          lugar: 'CARLX E.I.R.L.',
+          periodo: 'Aug 2025 – Sep 2026',
+          detalle: 'Where I took my first steps in data analysis over a full year. I also built the company’s website.',
         },
         {
           cargo: 'Credit promoter & customer data management',
@@ -251,13 +263,13 @@ export const textos = {
       rol: 'Co-author · in charge of the data layer',
     },
 
-    dia: {
+    galeria: {
       titulo: 'A day in my life',
-      bloques: [
-        { momento: 'Morning', icono: 'sunrise', texto: 'Data at the hospital: cleaning, ETL and dashboard reviews.' },
-        { momento: 'Afternoon', icono: 'sun', texto: 'Classes at UNT and thesis work.' },
-        { momento: 'Evening', icono: 'moon', texto: 'ZeroBaz projects with the team, and something new to learn.' },
-      ],
+      subtitulo: 'What I do when I am not looking at data.',
+      ampliar: 'Enlarge photo',
+      cerrar: 'Close',
+      anterior: 'Previous photo',
+      siguiente: 'Next photo',
     },
 
     contacto: {
@@ -279,6 +291,11 @@ export const textos = {
     pie: 'Built with React and Tailwind',
   },
 }
+
+// Galería "Mi día a día": fotos de tu día a día o de tus ratos libres.
+// Pon las fotos en public/img/galeria/ y agrégalas aquí. Mientras la lista esté vacía, la tarjeta no se muestra.
+// Ejemplo: { foto: 'img/galeria/01.webp', es: 'Pie de foto', en: 'Photo caption' },
+export const galeria = []
 
 // Proyectos: el orden de la lista es el orden en que aparecen.
 // categorias: datos | ml | dev | iot   ·   icono: ver ICONOS_PROYECTO en Proyectos.jsx
@@ -438,31 +455,6 @@ export const proyectos = [
       puntos: [
         'Works fully offline: data stays on the device.',
         'Exports records to Excel and ships as a portable Windows app.',
-      ],
-    },
-  },
-  {
-    id: 'nexustix',
-    icono: 'ticket',
-    destacado: false,
-    categorias: ['dev'],
-    stack: ['FastAPI', 'PostgreSQL', 'Docker', 'Nginx'],
-    es: {
-      titulo: 'NEXUSTIX',
-      contexto: 'Curso Sistemas Operativos II · 2026',
-      resumen: 'Plataforma distribuida de venta de entradas con microservicios, réplicas y tolerancia a fallos.',
-      puntos: [
-        'Compra idempotente coordinada por saga, con balanceador Nginx y réplicas de PostgreSQL.',
-        '156 pruebas automatizadas entre unitarias y de integración.',
-      ],
-    },
-    en: {
-      titulo: 'NEXUSTIX',
-      contexto: 'Operating Systems II course · 2026',
-      resumen: 'Distributed ticketing platform with microservices, replicas and fault tolerance.',
-      puntos: [
-        'Idempotent purchases coordinated by a saga, with an Nginx load balancer and PostgreSQL replicas.',
-        '156 automated unit and integration tests.',
       ],
     },
   },

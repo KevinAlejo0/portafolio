@@ -32,7 +32,7 @@ export default function App() {
       <div className="fondo-puntos pointer-events-none absolute inset-x-0 top-0 h-[520px]" aria-hidden="true" />
       <Encabezado t={t} idioma={idioma} setIdioma={setIdioma} />
       <main className="relative mx-auto max-w-6xl px-4 pt-6 pb-16 sm:px-6 sm:pt-10">
-        <Bento t={t} />
+        <Bento t={t} idioma={idioma} />
         <Proyectos t={t} idioma={idioma} />
       </main>
       <footer className="border-t border-borde bg-white">

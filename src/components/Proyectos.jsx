@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, Database, Globe, Hospital, House, ShoppingBag, SquareParking, Ticket, Truck, Waves } from 'lucide-react'
+import { Check, Database, Globe, Hospital, House, ShoppingBag, SquareParking, Truck, Waves } from 'lucide-react'
 import Tarjeta, { useAparecer } from './Tarjeta'
 import { proyectos } from '../data/contenido'
 
@@ -10,7 +10,6 @@ const ICONOS_PROYECTO = {
   parking: SquareParking,
   shop: ShoppingBag,
   truck: Truck,
-  ticket: Ticket,
   globe: Globe,
   home: House,
 }

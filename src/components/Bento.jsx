@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import {
   ArrowUpRight, BookOpen, Briefcase, ChartColumn, Check, Copy, Download, FileText, GraduationCap,
-  Languages, Mail, MapPin, Moon, Sparkles, Sun, Sunrise, Users, Wrench, Clock,
+  Languages, Mail, MapPin, Sparkles, Users, Wrench, Clock,
 } from 'lucide-react'
 import Tarjeta, { TituloTarjeta } from './Tarjeta'
+import Galeria from './Galeria'
 import { IconoGithub, IconoInstagram, IconoLinkedin, IconoWhatsapp } from './Iconos'
-import { perfil } from '../data/contenido'
-
-const ICONOS_DIA = { sunrise: Sunrise, sun: Sun, moon: Moon }
+import { galeria, perfil } from '../data/contenido'
 
 function Redes({ className = '' }) {
   const enlaces = [
@@ -34,7 +33,7 @@ function Redes({ className = '' }) {
   )
 }
 
-export default function Bento({ t }) {
+export default function Bento({ t, idioma }) {
   const [copiado, setCopiado] = useState(false)
 
   async function copiarCorreo() {
@@ -260,33 +259,20 @@ export default function Bento({ t }) {
         </p>
       </Tarjeta>
 
-      {/* ---------- Mi día a día ---------- */}
-      <Tarjeta className="md:col-span-2">
-        <TituloTarjeta icono={Sun}>{t.dia.titulo}</TituloTarjeta>
-        <ol className="grid gap-3 sm:grid-cols-3">
-          {t.dia.bloques.map((b) => {
-            const Icono = ICONOS_DIA[b.icono]
-            return (
-              <li key={b.momento} className="rounded-2xl border border-borde p-4">
-                <span className="mb-3 grid size-9 place-items-center rounded-xl bg-hielo text-marca">
-                  <Icono className="size-[18px]" aria-hidden="true" />
-                </span>
-                <p className="font-bold text-tinta">{b.momento}</p>
-                <p className="mt-1 text-sm leading-snug text-suave">{b.texto}</p>
-              </li>
-            )
-          })}
-        </ol>
-      </Tarjeta>
+      {/* ---------- Mi día a día (solo aparece si hay fotos) ---------- */}
+      <Galeria t={t} idioma={idioma} />
 
-      {/* ---------- Contacto ---------- */}
-      <Tarjeta id="contacto" className="flex flex-col justify-between gap-5 md:col-span-2">
-        <div>
+      {/* ---------- Contacto (ocupa todo el ancho si no hay galería) ---------- */}
+      <Tarjeta
+        id="contacto"
+        className={`flex flex-col justify-between gap-5 md:col-span-2 ${galeria.length ? '' : 'lg:col-span-4 lg:flex-row lg:items-end lg:gap-10'}`}
+      >
+        <div className="min-w-0">
           <TituloTarjeta icono={Mail}>{t.nav.contacto}</TituloTarjeta>
           <p className="text-2xl font-extrabold tracking-tight text-tinta">{t.contacto.titulo}</p>
-          <p className="mt-2 text-sm leading-relaxed text-suave">{t.contacto.texto}</p>
+          <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-suave">{t.contacto.texto}</p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className={`flex flex-col gap-3 ${galeria.length ? '' : 'lg:w-[460px] lg:shrink-0'}`}>
           <div className="flex min-w-0 items-center gap-2 rounded-xl border border-borde bg-fondo p-1.5 pl-4">
             <a href={`mailto:${perfil.email}`} className="min-w-0 flex-1 truncate text-sm font-semibold text-tinta hover:text-marca">
               {perfil.email}
