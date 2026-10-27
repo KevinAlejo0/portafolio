@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Logo ZeroBaz: cero rebanado (anillo azul + diagonal celeste), según el flyer de la marca -->
+  <path d="M68.5 17.5 A37 37 0 1 0 82.5 31.5" fill="none" stroke="#2563eb" stroke-width="13" stroke-linecap="round"/>
+  <line x1="30" y1="70" x2="74" y2="26" stroke="#38bdf8" stroke-width="13" stroke-linecap="round"/>
+</svg>
