@@ -2,6 +2,10 @@
 
 Portafolio personal en estilo *bento grid* (React + Vite + Tailwind), bilingüe español/inglés y orientado al análisis de datos.
 
+**En línea:** https://kevin-mostacero.vercel.app
+
+Cada vez que subes cambios a la rama `main` de GitHub, Vercel vuelve a publicar la página sola en un par de minutos.
+
 ## Cómo verlo en tu computadora
 
 ```bash
