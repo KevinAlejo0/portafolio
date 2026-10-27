@@ -6,6 +6,7 @@ export const perfil = {
   nombre: 'Kevin Alejandro Mostacero Bazán',
   nombreCorto: 'Kevin Mostacero',
   foto: 'img/foto-perfil.webp',
+  fotoRecortada: 'img/foto-recortada.webp',
   cv: 'cv/CV-Kevin-Mostacero.pdf',
   email: 'kevinalejandro.jqg@gmail.com',
   whatsapp: '51957049768',
@@ -15,24 +16,61 @@ export const perfil = {
     github: 'https://github.com/KevinAlejo0',
     instagram: 'https://www.instagram.com/mbkev1/',
   },
-  usuarios: { github: 'KevinAlejo0', instagram: '@mbkev1', linkedin: 'kevin-alejandro-mostacero-bazan' },
 }
+
+// Franja animada: herramientas (no se traducen)
+export const herramientasFranja = [
+  'Python', 'SQL', 'Power BI', 'pandas', 'ETL', 'PyTorch', 'XGBoost',
+  'SQL Server', 'PostgreSQL', 'Excel', 'scikit-learn', 'React', 'FastAPI',
+]
 
 export const textos = {
   es: {
-    nav: { inicio: 'Inicio', proyectos: 'Proyectos', contacto: 'Contacto', cv: 'Descargar CV' },
+    nav: { inicio: 'Inicio', sobreMi: 'Sobre mí', proyectos: 'Proyectos', zerobaz: 'ZeroBaz', contacto: 'Contacto', hablemos: 'Hablemos', cv: 'CV' },
 
-    hero: {
+    portada: {
+      meta: 'Portafolio · 2026',
       estado: 'Disponible para prácticas en análisis de datos',
-      saludo: 'Hola, soy Kevin',
-      rol: 'Convierto datos desordenados en decisiones claras.',
-      bio: 'Estudiante de décimo ciclo de Ingeniería Informática en la Universidad Nacional de Trujillo. Construyo pipelines ETL, dashboards en Power BI y modelos predictivos con Python, y fundé ZeroBaz, un emprendimiento de soluciones digitales.',
+      saludo: 'Hola, soy Kevin Mostacero',
+      titulo: ['Analista', 'de datos'],
+      bio: 'Convierto datos desordenados en decisiones claras. Estudio décimo ciclo de Ingeniería Informática en la UNT, fundé ZeroBaz y hago prácticas de análisis de datos en el Hospital Distrital de Pacasmayo.',
       ctaProyectos: 'Ver proyectos',
       ctaCv: 'Descargar CV',
+      nota: '¡ese soy yo!',
       ubicacion: 'Trujillo · Pacasmayo, Perú',
+      fondo: 'DATOS',
+      tarjetaModelo: { valor: 'R² 0.80', texto: 'Predicción de oleaje · LSTM' },
+      tarjetaPremio: { valor: '1.er lugar', texto: 'EXPOTIVE 2025' },
+      desplazar: 'Desliza',
     },
 
-    foto: { etiqueta: 'Análisis de datos · BI · ML' },
+    franja: ['Limpieza de datos', 'Dashboards', 'Modelos predictivos', 'Bases de datos', 'Automatización', 'Indicadores'],
+
+    servicios: {
+      etiqueta: 'Lo que hago',
+      titulo: 'De archivos sueltos a decisiones',
+      lista: [
+        { titulo: 'Limpieza y ETL', texto: 'Ordeno archivos desordenados y los cargo a una base de datos lista para analizar.', herramientas: ['Python', 'pandas', 'SQL Server'] },
+        { titulo: 'Dashboards y BI', texto: 'Diseño tableros en Power BI con indicadores, metas y semáforos fáciles de leer.', herramientas: ['Power BI', 'SQL', 'Excel'] },
+        { titulo: 'Modelos predictivos', texto: 'Entreno modelos que anticipan lo que viene: del oleaje a las ventas.', herramientas: ['PyTorch', 'XGBoost', 'scikit-learn'] },
+        { titulo: 'Bases de datos', texto: 'Modelo, migro y optimizo bases de datos para que la información sea confiable.', herramientas: ['PostgreSQL', 'MySQL', 'SQL Server'] },
+      ],
+    },
+
+    sobreMi: {
+      etiqueta: 'Sobre mí',
+      titulo: 'Detrás de los datos',
+      parrafos: [
+        'Soy de la costa norte del Perú y estudio Ingeniería Informática en la Universidad Nacional de Trujillo. Di mis primeros pasos en análisis de datos en CARLX y hoy automatizo los indicadores del Hospital Distrital de Pacasmayo.',
+        'Me gusta llevar un proyecto de principio a fin: desde limpiar el primer archivo hasta el dashboard que usa el equipo. Fuera de los datos, construyo ZeroBaz con mis dos socios y apoyo en el Voluntariado UNT.',
+      ],
+      metricas: [
+        { numero: 0.8, decimales: 2, unidad: 'R²', texto: 'del modelo LSTM que predice el oleaje a 24 horas' },
+        { numero: 33, unidad: 'años', texto: 'de datos horarios para entrenarlo' },
+        { numero: 6, unidad: 'fichas', texto: 'de indicadores MINSA automatizadas' },
+        { numero: 1, sufijo: '.º', unidad: 'lugar', texto: 'en EXPOTIVE 2025 con Casa Domótica' },
+      ],
+    },
 
     educacion: {
       titulo: 'Formación',
@@ -51,26 +89,26 @@ export const textos = {
       ],
     },
 
-    zerobaz: {
-      etiqueta: 'Mi emprendimiento',
-      cargo: 'Fundador · desde abril de 2026',
-      descripcion: 'Fundé ZeroBaz para llevar soluciones digitales a la medida a negocios, emprendedores y estudiantes. Hoy somos un equipo de tres: sumé a dos amigos para atender más proyectos.',
-      servicios: ['Sistemas para negocios', 'Páginas web', 'Dashboards y reportes', 'Soporte técnico', 'Asesoría en informes'],
-      equipo: 'Equipo de 3',
-      cliente: 'Cliente destacado: Bluequest Perú S.A.C. — sistema de pesaje de camiones',
+    ahora: {
+      titulo: 'Ahora mismo',
+      lista: [
+        { etiqueta: 'Terminando', texto: 'mi tesis de predicción de oleaje con redes LSTM' },
+        { etiqueta: 'Construyendo', texto: 'ZeroBaz junto a mis dos socios' },
+        { etiqueta: 'Apoyando', texto: 'como voluntario en el Voluntariado UNT' },
+        { etiqueta: 'Buscando', texto: 'prácticas pre-profesionales en datos o BI' },
+      ],
     },
 
-    metricas: {
-      titulo: 'Mis datos en números',
-      items: [
-        { valor: '0.80', unidad: 'R²', texto: 'del modelo LSTM que predice el oleaje a 24 horas' },
-        { valor: '33', unidad: 'años', texto: 'de datos horarios usados para entrenarlo' },
-        { valor: '6', unidad: 'fichas', texto: 'de indicadores MINSA automatizadas en Power BI' },
-        { valor: '1.º', unidad: 'lugar', texto: 'en EXPOTIVE 2025 con el proyecto Casa Domótica' },
+    logros: {
+      titulo: 'Logros',
+      lista: [
+        { tipo: 'Publicación', titulo: 'Sistema de Smart Parking basado en IoT con comunicación MQTT y visualización en tiempo real', detalle: 'Revista Científica Tecnológica · UNT · 2026 · Coautor, capa de datos' },
+        { tipo: 'Premio', titulo: '1.er lugar en EXPOTIVE 2025', detalle: 'Exposición de Tecnologías con Visión Empresarial · UNT · Casa Domótica' },
       ],
     },
 
     experiencia: {
+      etiqueta: 'Trayectoria',
       titulo: 'Experiencia',
       verCv: 'Ver CV completo (PDF)',
       lista: [
@@ -101,36 +139,30 @@ export const textos = {
       ],
     },
 
-    habilidades: {
-      titulo: 'Herramientas',
-      grupos: [
-        { nombre: 'Análisis de datos', items: ['Python', 'pandas', 'SQL', 'Power BI', 'ETL', 'Excel'] },
-        { nombre: 'Machine learning', items: ['PyTorch (LSTM)', 'XGBoost', 'scikit-learn', 'CRISP-DM'] },
-        { nombre: 'Bases de datos', items: ['SQL Server', 'PostgreSQL', 'MySQL', 'Modelado dimensional'] },
-        { nombre: 'Desarrollo', items: ['React', 'JavaScript', 'FastAPI', 'Node.js', 'Docker', 'Git'] },
-      ],
+    proyectos: {
+      etiqueta: 'Trabajo seleccionado',
+      titulo: 'Proyectos',
+      subtitulo: 'Primero los de datos, que es donde me quiero especializar.',
+      destacado: 'Destacado',
+      todos: 'Todos',
+      categorias: { datos: 'Datos y BI', ml: 'Machine learning', dev: 'Desarrollo', iot: 'IoT' },
     },
 
-    ahora: {
-      titulo: 'Ahora mismo',
-      lista: [
-        { etiqueta: 'Terminando', texto: 'mi tesis de predicción de oleaje con redes LSTM' },
-        { etiqueta: 'Construyendo', texto: 'ZeroBaz junto a mis dos socios' },
-        { etiqueta: 'Apoyando', texto: 'como voluntario en el Voluntariado UNT' },
-        { etiqueta: 'Buscando', texto: 'prácticas pre-profesionales en datos o BI' },
-      ],
-    },
-
-    publicacion: {
-      titulo: 'Publicación',
-      nombre: 'Sistema de Smart Parking basado en IoT con comunicación MQTT y visualización en tiempo real',
-      revista: 'Revista Científica Tecnológica · UNT · Vol. 1, Núm. 1 (2026)',
-      rol: 'Coautor · responsable de la capa de datos',
+    zerobaz: {
+      etiqueta: 'Mi emprendimiento',
+      cargo: 'Fundador · desde abril de 2026',
+      lema: ['Soluciones digitales', 'a tu medida.'],
+      descripcion: 'Fundé ZeroBaz para llevar tecnología a negocios, emprendedores y estudiantes de la costa norte. Hoy somos un equipo de tres: sumé a dos amigos para atender más proyectos.',
+      servicios: ['Sistemas para negocios', 'Páginas web', 'Dashboards y reportes', 'Soporte técnico', 'Instalación de programas', 'Asesoría en informes'],
+      equipo: 'Equipo de 3',
+      cliente: 'Cliente destacado: Bluequest Perú S.A.C.',
+      cta: 'Cotiza tu proyecto',
     },
 
     galeria: {
+      etiqueta: 'Fuera del teclado',
       titulo: 'Mi día a día',
-      subtitulo: 'Lo que hago cuando no estoy frente a los datos.',
+      nota: 'lo que no sale en el CV',
       ampliar: 'Ampliar foto',
       cerrar: 'Cerrar',
       anterior: 'Foto anterior',
@@ -138,38 +170,63 @@ export const textos = {
     },
 
     contacto: {
-      titulo: '¿Trabajamos juntos?',
-      texto: 'Escríbeme para prácticas, proyectos de datos o una propuesta para tu negocio con ZeroBaz.',
+      etiqueta: 'Contacto',
+      titulo: '¿Hablamos?',
+      texto: 'Escríbeme para prácticas, proyectos de datos o una propuesta para tu negocio con ZeroBaz. Respondo rápido por WhatsApp.',
       copiar: 'Copiar correo',
       copiado: '¡Copiado!',
-      whatsapp: 'WhatsApp',
+      whatsapp: 'Escríbeme por WhatsApp',
     },
 
-    proyectos: {
-      titulo: 'Proyectos',
-      subtitulo: 'Primero los de datos, que es donde me quiero especializar. Filtra por categoría.',
-      destacado: 'Destacado',
-      todos: 'Todos',
-      categorias: { datos: 'Datos y BI', ml: 'Machine learning', dev: 'Desarrollo', iot: 'IoT' },
-    },
-
-    pie: 'Hecho con React y Tailwind',
+    pie: { hecho: 'Hecho con React, Tailwind y Motion', arriba: 'Volver arriba' },
   },
 
   en: {
-    nav: { inicio: 'Home', proyectos: 'Projects', contacto: 'Contact', cv: 'Download CV' },
+    nav: { inicio: 'Home', sobreMi: 'About', proyectos: 'Projects', zerobaz: 'ZeroBaz', contacto: 'Contact', hablemos: "Let's talk", cv: 'CV' },
 
-    hero: {
+    portada: {
+      meta: 'Portfolio · 2026',
       estado: 'Open to data analysis internships',
-      saludo: "Hi, I'm Kevin",
-      rol: 'I turn messy data into clear decisions.',
-      bio: 'Final-year (10th semester) Computer Engineering student at Universidad Nacional de Trujillo. I build ETL pipelines, Power BI dashboards and predictive models with Python, and I founded ZeroBaz, a digital solutions startup.',
+      saludo: "Hi, I'm Kevin Mostacero",
+      titulo: ['Data', 'analyst'],
+      bio: 'I turn messy data into clear decisions. Final-year Computer Engineering student at UNT, founder of ZeroBaz and data analysis intern at Pacasmayo District Hospital.',
       ctaProyectos: 'See projects',
       ctaCv: 'Download CV',
+      nota: "that's me!",
       ubicacion: 'Trujillo · Pacasmayo, Peru',
+      fondo: 'DATA',
+      tarjetaModelo: { valor: 'R² 0.80', texto: 'Wave forecasting · LSTM' },
+      tarjetaPremio: { valor: '1st place', texto: 'EXPOTIVE 2025' },
+      desplazar: 'Scroll',
     },
 
-    foto: { etiqueta: 'Data analysis · BI · ML' },
+    franja: ['Data cleaning', 'Dashboards', 'Predictive models', 'Databases', 'Automation', 'KPIs'],
+
+    servicios: {
+      etiqueta: 'What I do',
+      titulo: 'From scattered files to decisions',
+      lista: [
+        { titulo: 'Cleaning & ETL', texto: 'I tidy up messy files and load them into a database that is ready for analysis.', herramientas: ['Python', 'pandas', 'SQL Server'] },
+        { titulo: 'Dashboards & BI', texto: 'I design Power BI dashboards with indicators, targets and easy-to-read traffic lights.', herramientas: ['Power BI', 'SQL', 'Excel'] },
+        { titulo: 'Predictive models', texto: 'I train models that anticipate what comes next: from waves to sales.', herramientas: ['PyTorch', 'XGBoost', 'scikit-learn'] },
+        { titulo: 'Databases', texto: 'I model, migrate and optimize databases so the information can be trusted.', herramientas: ['PostgreSQL', 'MySQL', 'SQL Server'] },
+      ],
+    },
+
+    sobreMi: {
+      etiqueta: 'About me',
+      titulo: 'Behind the data',
+      parrafos: [
+        'I am from Peru’s northern coast and study Computer Engineering at Universidad Nacional de Trujillo. I took my first steps in data analysis at CARLX, and today I automate the indicators of Pacasmayo District Hospital.',
+        'I like owning a project end to end: from cleaning the first file to the dashboard the team uses. Away from data, I am building ZeroBaz with my two partners and volunteering with the UNT Volunteer Program.',
+      ],
+      metricas: [
+        { numero: 0.8, decimales: 2, unidad: 'R²', texto: 'of the LSTM model that forecasts waves 24 hours ahead' },
+        { numero: 33, unidad: 'years', texto: 'of hourly data used to train it' },
+        { numero: 6, unidad: 'indicators', texto: 'from MINSA health sheets automated' },
+        { numero: 1, sufijo: 'st', unidad: 'place', texto: 'at EXPOTIVE 2025 with the Smart Home project' },
+      ],
+    },
 
     educacion: {
       titulo: 'Education',
@@ -188,26 +245,26 @@ export const textos = {
       ],
     },
 
-    zerobaz: {
-      etiqueta: 'My startup',
-      cargo: 'Founder · since April 2026',
-      descripcion: 'I founded ZeroBaz to bring tailor-made digital solutions to businesses, entrepreneurs and students. We are now a team of three: I brought in two friends to take on more projects.',
-      servicios: ['Business systems', 'Websites', 'Dashboards & reports', 'Tech support', 'Report consulting'],
-      equipo: 'Team of 3',
-      cliente: 'Featured client: Bluequest Perú S.A.C. — truck weighing system',
+    ahora: {
+      titulo: 'Right now',
+      lista: [
+        { etiqueta: 'Finishing', texto: 'my thesis on wave forecasting with LSTM networks' },
+        { etiqueta: 'Building', texto: 'ZeroBaz with my two partners' },
+        { etiqueta: 'Giving back', texto: 'as a volunteer with the UNT Volunteer Program' },
+        { etiqueta: 'Looking for', texto: 'an internship in data or BI' },
+      ],
     },
 
-    metricas: {
-      titulo: 'My data in numbers',
-      items: [
-        { valor: '0.80', unidad: 'R²', texto: 'of the LSTM model that forecasts waves 24 hours ahead' },
-        { valor: '33', unidad: 'years', texto: 'of hourly data used to train it' },
-        { valor: '6', unidad: 'indicators', texto: 'from MINSA health sheets automated in Power BI' },
-        { valor: '1st', unidad: 'place', texto: 'at EXPOTIVE 2025 with the Smart Home project' },
+    logros: {
+      titulo: 'Highlights',
+      lista: [
+        { tipo: 'Publication', titulo: 'IoT-based Smart Parking system with MQTT communication and real-time visualization', detalle: 'Revista Científica Tecnológica · UNT · 2026 · Co-author, data layer' },
+        { tipo: 'Award', titulo: '1st place at EXPOTIVE 2025', detalle: 'Technology fair with a business vision · UNT · Smart Home' },
       ],
     },
 
     experiencia: {
+      etiqueta: 'Career',
       titulo: 'Experience',
       verCv: 'View full CV (PDF, Spanish)',
       lista: [
@@ -238,36 +295,30 @@ export const textos = {
       ],
     },
 
-    habilidades: {
-      titulo: 'Toolbox',
-      grupos: [
-        { nombre: 'Data analysis', items: ['Python', 'pandas', 'SQL', 'Power BI', 'ETL', 'Excel'] },
-        { nombre: 'Machine learning', items: ['PyTorch (LSTM)', 'XGBoost', 'scikit-learn', 'CRISP-DM'] },
-        { nombre: 'Databases', items: ['SQL Server', 'PostgreSQL', 'MySQL', 'Dimensional modeling'] },
-        { nombre: 'Development', items: ['React', 'JavaScript', 'FastAPI', 'Node.js', 'Docker', 'Git'] },
-      ],
+    proyectos: {
+      etiqueta: 'Selected work',
+      titulo: 'Projects',
+      subtitulo: 'Data projects first — that is where I want to specialize.',
+      destacado: 'Featured',
+      todos: 'All',
+      categorias: { datos: 'Data & BI', ml: 'Machine learning', dev: 'Development', iot: 'IoT' },
     },
 
-    ahora: {
-      titulo: 'Right now',
-      lista: [
-        { etiqueta: 'Finishing', texto: 'my thesis on wave forecasting with LSTM networks' },
-        { etiqueta: 'Building', texto: 'ZeroBaz with my two partners' },
-        { etiqueta: 'Giving back', texto: 'as a volunteer with the UNT Volunteer Program' },
-        { etiqueta: 'Looking for', texto: 'an internship in data or BI' },
-      ],
-    },
-
-    publicacion: {
-      titulo: 'Publication',
-      nombre: 'IoT-based Smart Parking system with MQTT communication and real-time visualization',
-      revista: 'Revista Científica Tecnológica · UNT · Vol. 1, No. 1 (2026)',
-      rol: 'Co-author · in charge of the data layer',
+    zerobaz: {
+      etiqueta: 'My startup',
+      cargo: 'Founder · since April 2026',
+      lema: ['Digital solutions', 'made to fit.'],
+      descripcion: 'I founded ZeroBaz to bring technology to businesses, entrepreneurs and students on Peru’s northern coast. We are now a team of three: I brought in two friends to take on more projects.',
+      servicios: ['Business systems', 'Websites', 'Dashboards & reports', 'Tech support', 'Software installation', 'Report consulting'],
+      equipo: 'Team of 3',
+      cliente: 'Featured client: Bluequest Perú S.A.C.',
+      cta: 'Get a quote',
     },
 
     galeria: {
+      etiqueta: 'Away from the keyboard',
       titulo: 'A day in my life',
-      subtitulo: 'What I do when I am not looking at data.',
+      nota: 'what my CV doesn’t show',
       ampliar: 'Enlarge photo',
       cerrar: 'Close',
       anterior: 'Previous photo',
@@ -275,22 +326,15 @@ export const textos = {
     },
 
     contacto: {
-      titulo: 'Shall we work together?',
-      texto: 'Reach out about internships, data projects, or a proposal for your business with ZeroBaz.',
+      etiqueta: 'Contact',
+      titulo: "Let's talk",
+      texto: 'Reach out about internships, data projects, or a proposal for your business with ZeroBaz. I reply fast on WhatsApp.',
       copiar: 'Copy email',
       copiado: 'Copied!',
-      whatsapp: 'WhatsApp',
+      whatsapp: 'Message me on WhatsApp',
     },
 
-    proyectos: {
-      titulo: 'Projects',
-      subtitulo: 'Data projects first — that is where I want to specialize. Filter by category.',
-      destacado: 'Featured',
-      todos: 'All',
-      categorias: { datos: 'Data & BI', ml: 'Machine learning', dev: 'Development', iot: 'IoT' },
-    },
-
-    pie: 'Built with React and Tailwind',
+    pie: { hecho: 'Built with React, Tailwind and Motion', arriba: 'Back to top' },
   },
 }
 
@@ -298,7 +342,7 @@ export const textos = {
 // forma: 'grande' (2×2) o 'alta' (1×2 en escritorio); sin forma ocupa una celda.
 // enfoque: qué parte de la foto se ve en el mosaico (posición horizontal y vertical).
 // Con 7 fotos el mosaico queda completo así: 1 grande, 2 altas y 4 normales, en este orden.
-// Si la lista queda vacía, la tarjeta no se muestra.
+// Si la lista queda vacía, la sección no se muestra.
 export const galeria = [
   { foto: 'img/galeria/01-voluntariado.webp', forma: 'grande', enfoque: '50% 62%', es: 'Voluntariado UNT', en: 'UNT volunteering' },
   { foto: 'img/galeria/02-accion-social.webp', forma: 'alta', enfoque: '50% 55%', es: 'Acción social', en: 'Community work' },
@@ -311,11 +355,13 @@ export const galeria = [
 
 // Proyectos: el orden de la lista es el orden en que aparecen.
 // categorias: datos | ml | dev | iot   ·   icono: ver ICONOS_PROYECTO en Proyectos.jsx
+// portada (opcional): una foto real del proyecto; si no hay, se dibuja una portada con su ícono.
 export const proyectos = [
   {
     id: 'hospital',
     icono: 'hospital',
     destacado: true,
+    portada: 'img/galeria/05-dashboard.webp',
     categorias: ['datos'],
     stack: ['Python', 'pandas', 'SQL Server', 'T-SQL', 'Power BI', 'ETL'],
     es: {

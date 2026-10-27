@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react'
+import { MotionConfig } from 'motion/react'
 import Encabezado from './components/Encabezado'
-import Bento from './components/Bento'
+import Portada from './components/Portada'
+import Franja from './components/Franja'
+import Servicios from './components/Servicios'
+import SobreMi from './components/SobreMi'
+import Experiencia from './components/Experiencia'
 import Proyectos from './components/Proyectos'
-import { perfil, textos } from './data/contenido'
+import ZeroBaz from './components/ZeroBaz'
+import Galeria from './components/Galeria'
+import Contacto from './components/Contacto'
+import Pie from './components/Pie'
+import { textos } from './data/contenido'
 
 function idiomaInicial() {
   try {
@@ -28,23 +37,21 @@ export default function App() {
   }, [idioma])
 
   return (
-    <>
-      <div className="fondo-puntos pointer-events-none absolute inset-x-0 top-0 h-[520px]" aria-hidden="true" />
+    // reducedMotion="user": respeta a quien pidió menos animaciones en su sistema
+    <MotionConfig reducedMotion="user">
       <Encabezado t={t} idioma={idioma} setIdioma={setIdioma} />
-      <main className="relative mx-auto max-w-6xl px-4 pt-6 pb-16 sm:px-6 sm:pt-10">
-        <Bento t={t} idioma={idioma} />
+      <main>
+        <Portada t={t} />
+        <Franja t={t} />
+        <Servicios t={t} />
+        <SobreMi t={t} />
+        <Experiencia t={t} />
         <Proyectos t={t} idioma={idioma} />
+        <ZeroBaz t={t} />
+        <Galeria t={t} idioma={idioma} />
+        <Contacto t={t} />
       </main>
-      <footer className="border-t border-borde bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-suave sm:flex-row sm:px-6">
-          <p>© {new Date().getFullYear()} {perfil.nombre}</p>
-          <p className="inline-flex items-center gap-2">
-            {t.pie} ·
-            <img src="img/zerobaz.svg" alt="" className="size-4" />
-            <span className="font-semibold tracking-wider text-tinta">ZEROBAZ</span>
-          </p>
-        </div>
-      </footer>
-    </>
+      <Pie t={t} />
+    </MotionConfig>
   )
 }
